@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faTwitter, faLinkedin, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
-import Logo from '../assets/logo.svg'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Logo from '../assets/logo.svg';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -21,10 +22,14 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           <div className="text-[#9B2C2C] font-bold text-2xl">
-            <img src={Logo} alt="" />
+            <img src={Logo} alt="Logo" />
           </div>
           <div className="hidden md:flex space-x-6 items-center">
-            <NavItem text="PROGRAMS" dropdown={['ABOUT', 'WORK AT STOA', 'HIRE FROM STOA', 'TEACH AT STOA']} />
+            <NavItem
+              text="PROGRAMS"
+              dropdown={['General Management', 'Marketing and Growth']}
+              showArrow
+            />
             <NavItem text="CHARTER HOLDERS" />
             <NavItem text="STOA DAILY" />
             <NavItem text="STOA EVENTS" />
@@ -68,20 +73,23 @@ const Navbar = () => {
   );
 };
 
-const NavItem = ({ text, dropdown }) => {
+const NavItem = ({ text, dropdown, showArrow }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="relative group">
+    <div
+      className="relative group"
+      onMouseEnter={() => dropdown && setIsOpen(true)}
+      onMouseLeave={() => dropdown && setIsOpen(false)}
+    >
       <button
-        className="text-[#9B2C2C] hover:text-[#7C2424] font-semibold group-hover:underline"
-        onMouseEnter={() => setIsOpen(true)}
-        onMouseLeave={() => setIsOpen(false)}
+        className={`text-[#9B2C2C] hover:text-[#7C2424] font-semibold flex items-center ${showArrow ? 'cursor-pointer' : ''}`}
       >
         {text}
+        {showArrow && <ExpandMoreIcon className="ml-1 text-[#9B2C2C]" />}
       </button>
       {dropdown && isOpen && (
-        <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1">
+        <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2">
           {dropdown.map((item, index) => (
             <a
               key={index}
@@ -96,6 +104,5 @@ const NavItem = ({ text, dropdown }) => {
     </div>
   );
 };
-
 
 export default Navbar;
