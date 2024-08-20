@@ -97,26 +97,24 @@ const Graphs = () => {
 
     return (
         <>
-            <div className="flex justify-center p-5 bg-[#f3e3c4]">
-                <div className="w-[400px] mr-5">
+            <div className="flex flex-col md:flex-row justify-center p-5 bg-[#f3e3c4]">
+                <div className="w-full md:w-[400px] md:mr-5 mb-5 md:mb-0 mx-auto">
                     <h3 className="text-center font-bold text-black mb-4">
                         With folks across all years of experience
                     </h3>
                     <Bar data={data1} options={options} />
                 </div>
-                <div className="w-[400px]">
+                <div className="w-full md:w-[400px] mx-auto">
                     <h3 className="text-center font-bold text-black mb-4">
                         And from various backgrounds
                     </h3>
                     <Bar data={data2} options={options} />
                 </div>
-
             </div>
-            <div class="w-4/5 mx-auto">
-                <div class="h-1 bg-black"></div>
+            <div className="w-4/5 mx-auto">
+                <div className="h-1 bg-black"></div>
             </div>
         </>
-
     );
 };
 
