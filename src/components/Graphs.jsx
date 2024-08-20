@@ -111,8 +111,8 @@ const Graphs = () => {
                     <Bar data={data2} options={options} />
                 </div>
             </div>
-            <div className="w-4/5 mx-auto">
-                <div className="h-1 bg-black"></div>
+            <div className='w-4/5 mx-auto'>
+                <div className="mt-8 border-t border-gray-500"></div>
             </div>
         </>
     );

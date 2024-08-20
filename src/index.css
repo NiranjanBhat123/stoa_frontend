@@ -1,7 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
 body{
     background-color: #f3e3c4;
+}
+
+
+.font-serif {
+  font-family: 'Playfair Display', serif;
 }

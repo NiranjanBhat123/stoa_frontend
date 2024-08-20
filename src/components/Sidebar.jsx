@@ -48,7 +48,7 @@ const Sidebar = () => {
 
     return (
         <div className="flex justify-center mt-8">
-            
+
             <div className="w-1/4 sticky top-20 self-start bg-[#f3e3c4] p-4">
                 <ul className="space-y-4">
                     {sections.map((section) => (
@@ -70,29 +70,30 @@ const Sidebar = () => {
                 </ul>
             </div>
 
-           
+
             <div className="w-1/2 pl-8 font-serif">
                 {sections.map((section) => (
                     <Section key={section.id} id={section.id} title={section.title} icon={section.icon}>
                         <h1 className="text-2xl font-bold text-[#9B2C2C] mb-4">{section.subtitle}</h1>
                         <p className="text-base text-maroon mb-4">{section.content}</p>
-                        
-                       
+
+
                         <Accordion>
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon />}
                                 aria-controls={`${section.id}-content`}
                                 id={`${section.id}-header`}
                             >
-                                <span>More Information</span>
+                                <span>View details</span>
                             </AccordionSummary>
                             <AccordionDetails>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.</p>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus aut nesciunt numquam culpa vitae, animi veniam. Quaerat maxime voluptates minima quis nesciunt veniam commodi quo cupiditate odio ea eum, assumenda laboriosam atque quia eligendi dolor laudantium voluptatibus nam aperiam necessitatibus modi animi corrupti! Inventore atque aliquid, doloribus repellendus laboriosam fugit, praesentium tempora facere incidunt adipisci tempore obcaecati error! Blanditiis hic aut dolorum quaerat doloremque voluptate molestiae harum quisquam impedit magnam repellendus eligendi exercitationem suscipit id accusamus ipsa reprehenderit ipsum, fugiat, perferendis deserunt autem obcaecati consequuntur a. Recusandae ipsum consequuntur ducimus sunt illum delectus accusantium! Tenetur quam similique rem inventore sunt!</p>
                             </AccordionDetails>
                         </Accordion>
                     </Section>
                 ))}
             </div>
+
         </div>
     );
 };

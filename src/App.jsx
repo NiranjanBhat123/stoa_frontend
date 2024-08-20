@@ -6,6 +6,7 @@ import Sidebar from './components/Sidebar.jsx';
 import Cards from './components/Cards.jsx';
 import FAQs from './components/FAQs.jsx';
 import Footer from './components/Footer.jsx'
+import Salaries from './components/Salaries.jsx';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
       <MainContent />
       <Slider />
       <Graphs />
+      <Salaries/>
       <Sidebar />
       <Cards/>
       <FAQs/>
