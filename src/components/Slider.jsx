@@ -104,7 +104,6 @@ const Slider = () => {
                                     {React.createElement(iconMap[profile.nextCompany], { className: `${colorMap[profile.nextCompany]} mr-2` })}
                                     <span className="font-semibold">{profile.nextCompanyName}</span>
                                 </div>
-                                <p className="text-gray-600 mb-1">NEW ROLE</p>
                                 <div className="flex items-center">
                                     <span className="font-serif">{profile.newRole}</span>
                                 </div>
