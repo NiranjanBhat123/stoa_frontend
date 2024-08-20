@@ -69,7 +69,33 @@ const Navbar = () => {
 };
 
 const NavItem = ({ text, dropdown }) => {
-  // ... (NavItem component remains unchanged)
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="relative group">
+      <button
+        className="text-[#9B2C2C] hover:text-[#7C2424] font-semibold group-hover:underline"
+        onMouseEnter={() => setIsOpen(true)}
+        onMouseLeave={() => setIsOpen(false)}
+      >
+        {text}
+      </button>
+      {dropdown && isOpen && (
+        <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1">
+          {dropdown.map((item, index) => (
+            <a
+              key={index}
+              href="#"
+              className="block px-4 py-2 text-sm text-[#9B2C2C] hover:bg-gray-100"
+            >
+              {item}
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  );
 };
+
 
 export default Navbar;
