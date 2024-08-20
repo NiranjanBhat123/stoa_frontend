@@ -12,7 +12,7 @@ const Slider = () => {
     const profiles = [
         { name: 'John Smith', company: 'Barclays', imgSrc: Pic1 },
         { name: 'Emma Watson', company: 'BBC', imgSrc: Pic2 },
-        { name: 'David Beckham', company: 'Manchester United', imgSrc: Pic3 },
+        { name: 'David Smith', company: 'JP Morgan', imgSrc: Pic3 },
         { name: 'Adele Adkins', company: 'Sony Music', imgSrc: Pic4 },
     ];
 
@@ -25,10 +25,15 @@ const Slider = () => {
                 autoplay={{ delay: 2000, disableOnInteraction: false }}
                 loop={true}
                 speed={4000}
+                breakpoints={{
+                    640: {
+                        slidesPerView: 3, 
+                    },
+            }}
             >
                 {profiles.map((profile, index) => (
                     <SwiperSlide key={index}>
-                        <div className="bg-white rounded-lg shadow-lg p-6 text-center border-2 border-white">
+                        <div className="bg-white rounded-lg shadow-lg p-6 text-center border-2 border-white h-full flex flex-col justify-center">
                             <div className="mb-4">
                                 <img
                                     src={profile.imgSrc}
@@ -51,3 +56,5 @@ const Slider = () => {
 };
 
 export default Slider;
+
+
