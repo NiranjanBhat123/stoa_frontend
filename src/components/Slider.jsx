@@ -10,8 +10,8 @@ import Pic4 from '../assets/pics/pic4.png';
 
 const Slider = () => {
     const profiles = [
-        { name: 'John Smith', company: 'Barclays', imgSrc: Pic1 },
-        { name: 'Emma Watson', company: 'BBC', imgSrc: Pic2 },
+        { name: 'John Smith', company: 'Barclays Banks', imgSrc: Pic1 },
+        { name: 'Emma Watson', company: 'BBC News', imgSrc: Pic2 },
         { name: 'David Smith', company: 'JP Morgan', imgSrc: Pic3 },
         { name: 'Adele Adkins', company: 'Sony Music', imgSrc: Pic4 },
     ];
@@ -27,7 +27,7 @@ const Slider = () => {
                 speed={4000}
                 breakpoints={{
                     640: {
-                        slidesPerView: 3, 
+                        slidesPerView: 2, 
                     },
             }}
             >
